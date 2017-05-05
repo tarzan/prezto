@@ -68,7 +68,7 @@ function zprezto-update {
 #
 # Module Loader
 #
-
+echo "Loading modules..."
 # Loads Prezto modules.
 function pmodload {
   local -a pmodules
@@ -165,7 +165,7 @@ function pmodload {
 # needs to be done here because inside the pmodload function ${0:h} evaluates to
 # the current directory of the shell rather than the prezto dir.
 ZPREZTODIR=${0:h}
-
+echo "Sourcing configuration..."
 # Source the Prezto configuration file.
 if [[ -s "${ZDOTDIR:-$HOME}/.zpreztorc" ]]; then
   source "${ZDOTDIR:-$HOME}/.zpreztorc"
@@ -176,18 +176,19 @@ if [[ "$TERM" == 'dumb' ]]; then
   zstyle ':prezto:*:*' color 'no'
   zstyle ':prezto:module:prompt' theme 'off'
 fi
-
+echo "Loading zsh modules..."
 # Load Zsh modules.
 zstyle -a ':prezto:load' zmodule 'zmodules'
 for zmodule ("$zmodules[@]") zmodload "zsh/${(z)zmodule}"
 unset zmodule{s,}
-
+echo "Loading zsh functions..."
 # Autoload Zsh functions.
 zstyle -a ':prezto:load' zfunction 'zfunctions'
 for zfunction ("$zfunctions[@]") autoload -Uz "$zfunction"
 unset zfunction{s,}
-
+echo "Loading prezto modules..."
 # Load Prezto modules.
 zstyle -a ':prezto:load' pmodule 'pmodules'
 pmodload "$pmodules[@]"
 unset pmodules
+echo "done!"
