@@ -94,6 +94,7 @@ if ! zstyle -t ':prezto:module:git:alias' skip 'yes'; then
   # Fetch (f)
   alias gf='git fetch'
   alias gfa='git fetch --all'
+  alias gfp='git fetch --prune'
   alias gfc='git clone'
   alias gfcr='git clone --recurse-submodules'
   alias gfm='git pull'
@@ -221,6 +222,7 @@ if ! zstyle -t ':prezto:module:git:alias' skip 'yes'; then
   alias gri='git rebase --interactive'
   alias grs='git rebase --skip'
   alias grom='git rebase origin/master'
+  alias grod='git rebase origin/development'
 
   # Remote (R)
   alias gR='git remote'
