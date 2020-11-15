@@ -11,3 +11,22 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# echo "Binding keys...."
+# bindkey "\e\e[D" emacs-backward-word
+# bindkey "\e\e[C" emacs-forward-word
+# bindkey "\x0f" beginning-of-line
+# bindkey "\x1f" end-of-line
+# bindkey "\x9f" backward-kill-line
+# bindkey "\x90" backward-kill-word
+
+. $HOME/.asdf/asdf.sh
+
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit
+compinit

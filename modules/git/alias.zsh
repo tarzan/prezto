@@ -93,6 +93,7 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   # Fetch (f)
   alias gf='git fetch'
   alias gfa='git fetch --all'
+  alias gfp='git fetch --prune'
   alias gfc='git clone'
   alias gfcr='git clone --recurse-submodules'
   alias gfm='git pull'
@@ -172,6 +173,8 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   alias ggw='git grep --word-regexp'
 
   # Index (i)
+  alias gap='git add -p'
+  alias gaa='git add -A'
   alias gia='git add'
   alias giA='git add --patch'
   alias giu='git add --update'
@@ -217,6 +220,8 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   alias grc='git rebase --continue'
   alias gri='git rebase --interactive'
   alias grs='git rebase --skip'
+  alias grom='git rebase origin/master'
+  alias grod='git rebase origin/development'
 
   # Remote (R)
   alias gR='git remote'
@@ -262,8 +267,8 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   alias gtv='git verify-tag'
 
   # Working Copy (w)
-  alias gws='git status --ignore-submodules=$_git_status_ignore_submodules --short'
-  alias gwS='git status --ignore-submodules=$_git_status_ignore_submodules'
+  alias gwS='git status --ignore-submodules=$_git_status_ignore_submodules --short'
+  alias gws='git status --ignore-submodules=$_git_status_ignore_submodules'
   alias gwd='git diff --no-ext-diff'
   alias gwD='git diff --no-ext-diff --word-diff'
   alias gwr='git reset --soft'
