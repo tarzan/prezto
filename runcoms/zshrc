@@ -13,23 +13,23 @@ fi
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 # Customize to your needs...
-if [[ $OSTYPE == darwin* && $CPUTYPE != arm64 ]]; then
-  alias brew=/usr/local/homebrew/bin/brew
-  export PATH="/usr/local/opt/curl/bin:/usr/local/opt/openssl@1.1/bin:$HOME/bin:$PATH"
+# if [[ $OSTYPE == darwin* && $CPUTYPE != arm64 ]]; then
+#   alias brew=/usr/local/homebrew/bin/brew
+#   export PATH="/usr/local/opt/curl/bin:/usr/local/opt/openssl@1.1/bin:$HOME/bin:$PATH"
 
-  export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-  export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-fi
+#   export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+#   export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+# fi
 
-if [[ $OSTYPE == darwin* && $CPUTYPE == arm64 ]]; then
-  alias brew=/opt/homebrew/bin/brew
-  export PATH="/opt/homebrew/bin:/opt/homebrew/opt/openssl@1.1/bin:/usr/local/aws-cli:$PATH"
+# if [[ $OSTYPE == darwin* && $CPUTYPE == arm64 ]]; then
+#   alias brew=/opt/homebrew/bin/brew
+#   export PATH="/opt/homebrew/bin:/opt/homebrew/opt/openssl@1.1/bin:/usr/local/aws-cli:$PATH"
 
-  export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
-fi
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+#   export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
+#   export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
+# fi
+# export LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 
 
@@ -57,3 +57,5 @@ function seecert () {
 }
 
 # export KERL_CONFIGURE_OPTIONS="--disable-debug --disable-silent-rules --disable-sctp --without-javac --enable-shared-zlib --enable-dynamic-ssl-lib --enable-hipe --enable-smp-support --enable-threads --enable-kernel-poll --enable-wx --enable-darwin-64bit --with-ssl=$(brew --prefix openssl@1.1)"
+
+export ERL_AFLAGS="-kernel shell_history enabled"
