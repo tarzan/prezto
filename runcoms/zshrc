@@ -42,10 +42,13 @@ export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 # bindkey "\x9f" backward-kill-line
 # bindkey "\x90" backward-kill-word
 
-. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/asdf.sh
 
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
+# # append completions to fpath
+# fpath=(${ASDF_DIR}/completions $fpath)
+
+eval "$(mise activate zsh)"
+
 # initialise completions with ZSH's compinit
 autoload -Uz compinit
 compinit
@@ -59,3 +62,4 @@ function seecert () {
 # export KERL_CONFIGURE_OPTIONS="--disable-debug --disable-silent-rules --disable-sctp --without-javac --enable-shared-zlib --enable-dynamic-ssl-lib --enable-hipe --enable-smp-support --enable-threads --enable-kernel-poll --enable-wx --enable-darwin-64bit --with-ssl=$(brew --prefix openssl@1.1)"
 
 export ERL_AFLAGS="-kernel shell_history enabled"
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
